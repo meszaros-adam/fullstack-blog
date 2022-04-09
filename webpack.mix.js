@@ -12,6 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    mix.styles([
+        'public/css/bootstrap.min.css',
+        'public/css/carousel.css',
+        'public/css/common.css',
+        'public/css/main.css',
+        'public/css/responsive.css',
+    ],'public/css/all.css').version();
