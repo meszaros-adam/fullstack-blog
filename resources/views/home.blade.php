@@ -1,6 +1,7 @@
 @extends('layout/app')
 @section('title', 'Blog')
 @section('maincontent')
+{{$category[0]->categoryName}}
 <!-- BANNER -->
 <section class="banner_sec">
 			<div class="container">
