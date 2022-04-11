@@ -11101,7 +11101,6 @@ p {
 
 .blog_banner {
     position: relative;
-    background: url(../../img/blog_details_banner.jpg) no-repeat center center;
     min-height: 360px;
     z-index: 1;
     background-size: cover;

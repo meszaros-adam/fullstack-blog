@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\BlogController::class, 'index']);
+Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'blogSingle']);

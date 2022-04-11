@@ -40,7 +40,7 @@
 					@if(count($blogs)>0)
 						@foreach($blogs as $blog)
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="blog/{{$blog->slug}}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="img/card3.jpg" alt="image">
@@ -56,7 +56,7 @@
 												</li>
 											</ul>
 											@endif
-											<a href="blog_post.html">
+											<a href="blog/{{$blog->slug}}">
 												<h2 class="home_card_h2">{{$blog->title}}</h2>
 											</a>
 											<p class="post_p">{{$blog->post_excerpt}}<p>
@@ -65,7 +65,7 @@
 													<img src="img/man1.jpg" alt="image">
 												</div>
 												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">{{$blog->users->fullName}}</p></a>
+												<a href="contact_me.html"><p class="author_name">{{$blog->user->fullName}}</p></a>
 													<ul class="home_card_btm_r8_ul">
 														<li>Dec 4, 2019</li>
 														<li><span class="dot"></span>3 Min Read</li>

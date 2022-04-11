@@ -19,7 +19,7 @@ class Blog extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class, 'blog_tags');
     }
-    public function users(){
+    public function user(){
         return $this->belongsTo(User::class, 'user_id')->select('id', 'fullName','profilePic');
     }
 }
