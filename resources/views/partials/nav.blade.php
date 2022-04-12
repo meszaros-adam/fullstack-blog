@@ -6,7 +6,7 @@
 						<div class="row align-items-center">
 							<div class="col-4 col-md-4 col-lg-4">
 								<div class="logo">
-									<a href="home.html">
+									<a href="/">
 										<div class="logo_img">
 											<img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="image">
 										</div>
