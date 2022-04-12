@@ -23,7 +23,7 @@
 											@if(count($categories)>0)
 												@foreach($categories as $cat)
 												<li class="dis_fx_cntr">
-													<a href="/">{{$cat->categoryName}}</a>
+													<a href="/category/{{$cat->categoryName}}/{{$cat->id}}">{{$cat->categoryName}}</a>
 												</li>
 												@endforeach
 											@endif

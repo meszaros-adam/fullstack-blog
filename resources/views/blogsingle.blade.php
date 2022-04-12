@@ -237,7 +237,6 @@
                                     @foreach($relatedBlogs as $b)
                                     <div class="blog_post_r8_item">
                                         <div class="blog_post_item_lft">
-                                            <img src="/img/banner.jpg" alt="image">
                                         </div>
                                         <div class="blog_post_item_r8">
                                             <a href="/blog/{{$b->slug}}">
@@ -307,7 +306,7 @@
 								<ul class="post_tags_ul">
                                     @foreach($blog->tags as $tag)
 									<li>
-										<a href="">{{$tag->tagName}}</a>
+										<a href="/tag/{{$tag->tagName}}/{{$tag->id}}">{{$tag->tagName}}</a>
 									</li>
                                     @endforeach
 								</ul>

@@ -7,25 +7,20 @@
 				<div class="row">
 					<div class="col-12 col-md-10 col-lg-8">
 						<div class="row">
-						@if(count($categories)>0)
-								@foreach($categories as $cat)
 								<div class="col-12 col-md-4 col-lg-4">
 									<a href="">
 										<div class="banner_box">
 											<i class="fab fa-laravel"></i>
-											<h3 class="banner_box_h3">{{$cat->categoryName}}</h3>
+											<h3 class="banner_box_h3">{{$tagName}}</h3>
 											<p>The Toptal Blog is the top hub for developers.</p>
 										</div>
 									</a>
 								</div>
-								@endforeach
-							@endif
-							
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+</section>
 		<!-- BANNER -->
 
 		<!-- BODY -->
@@ -65,11 +60,11 @@
 														<img src="img/man1.jpg" alt="image">
 													</div>
 													<div class="home_card_btm_r8">
-													<a href="contact_me.html"><p class="author_name">{{$blog->user->fullName}}</p></a>
-														<ul class="home_card_btm_r8_ul">
-															<li>Dec 4, 2019</li>
-															<li><span class="dot"></span>3 Min Read</li>
-														</ul>
+														<a href="contact_me.html"><p class="author_name">{{$blog->user->fullName}}</p></a>
+															<ul class="home_card_btm_r8_ul">
+																<li>Dec 4, 2019</li>
+																<li><span class="dot"></span>3 Min Read</li>
+															</ul>
 													</div>
 												</div>
 											</div>
@@ -78,11 +73,10 @@
 								</a>
 							</div>
 							@endforeach
+						</div>
 						@endif
 					</div>
-					<div class="text-center">
-						<button type="button" class="btn btn-primary"><a href="/blogs" style="color: white">View All Blogs</a></button>
-					</div>
+					{!! $blogs->links('pagination::bootstrap-4') !!}
 				</div>
 			</div>
 		</div>

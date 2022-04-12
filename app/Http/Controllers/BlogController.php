@@ -28,4 +28,20 @@ class BlogController extends Controller
     public function compose(View $view){
         $view->with('categories', Category::select('id', 'categoryName')->get());
     }
+    public function categoryIndex(Request $request, $categoryName, $id){
+        $blogs = Blog::with('user')->whereHas('categories', function($q) use($id){
+            $q->where('category_id',  $id);
+        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        return view('category')->with(['categoryName' => $categoryName, 'blogs' => $blogs]) ;
+    }
+    public function tagIndex(Request $request, $tagName, $id){
+        $blogs = Blog::with('user')->whereHas('tags', function($q) use($id){
+            $q->where('tag_id',  $id);
+        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        return view('tag')->with(['tagName' => $tagName, 'blogs' => $blogs]) ;
+    }
+    public function allBlogs(){
+        $blogs = Blog::orderBy('id', 'desc')->with(['user'])->limit(6)->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        return view('blogs')->with(['blogs' => $blogs]);
+    }
 }

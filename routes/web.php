@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\BlogController::class, 'index']);
 Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'blogSingle']);
+Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'allBlogs']);
+Route::get('/category/{categoryName}/{id}', [App\Http\Controllers\BlogController::class, 'categoryIndex']);
+Route::get('/tag/{tagName}/{id}', [App\Http\Controllers\BlogController::class, 'tagIndex']);
