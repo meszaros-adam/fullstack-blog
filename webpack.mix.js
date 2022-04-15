@@ -11,8 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    mix.styles([
+mix.js('resources/js/app.js', 'public/js').vue().version();
+
+mix.styles([
         'public/css/bootstrap.min.css',
         'public/css/carousel.css',
         'public/css/common.css',

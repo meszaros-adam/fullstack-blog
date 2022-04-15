@@ -11101,6 +11101,7 @@ p {
 
 .blog_banner {
     position: relative;
+    background: rgba(0 114 225);
     min-height: 360px;
     z-index: 1;
     background-size: cover;

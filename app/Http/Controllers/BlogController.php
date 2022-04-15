@@ -41,7 +41,25 @@ class BlogController extends Controller
         return view('tag')->with(['tagName' => $tagName, 'blogs' => $blogs]) ;
     }
     public function allBlogs(){
-        $blogs = Blog::orderBy('id', 'desc')->with(['user'])->limit(6)->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        $blogs = Blog::orderBy('id', 'desc')->with(['user'])->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        return view('blogs')->with(['blogs' => $blogs]);
+    }
+    public function search(Request $request){
+        $str = $request->str;
+        $blogs = Blog::orderBy('id', 'desc')->with(['user', 'categories','tags'])->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage');
+        
+        $blogs->when($str!='', function($q) use($str){
+            $q->where('title', 'LIKE', "%{$str}%")
+            ->orWhereHas('categories', function($q) use($str){
+                $q->where('categoryName','LIKE', "%{$str}%");
+            })
+            ->orWhereHas('tags', function($q) use($str){
+                $q->where('tagName','LIKE', "%{$str}%");
+            });
+        });
+
+        $blogs = $blogs->paginate(1);
+        $blogs = $blogs->appends($request->all());
         return view('blogs')->with(['blogs' => $blogs]);
     }
 }
