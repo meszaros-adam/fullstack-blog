@@ -28,11 +28,10 @@
 												@endforeach
 											@endif
 											<li>
-												<a href="about_us.html">about</a>
+												<a href="/login_page">LOGIN</a>
 											</li>
-											
 											<li>
-												<a href="contact.html">CONTACT</a>
+												<a href="/registration_page">Register</a>
 											</li>
 										</ul>
 									</div>

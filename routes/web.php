@@ -19,3 +19,13 @@ Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'allBlogs']);
 Route::get('/category/{categoryName}/{id}', [App\Http\Controllers\BlogController::class, 'categoryIndex']);
 Route::get('/tag/{tagName}/{id}', [App\Http\Controllers\BlogController::class, 'tagIndex']);
 Route::get('/search', [App\Http\Controllers\BlogController::class, 'search']);
+
+//Auth
+Route::post('/registration', [App\Http\Controllers\BloguserController::class, 'registration']);
+Route::post('/login', [App\Http\Controllers\BloguserController::class, 'login']);
+Route::get('/login_page', [App\Http\Controllers\BlogController::class, function(){
+    return view('/auth/login');
+}]);
+Route::get('/registration_page', [App\Http\Controllers\BlogController::class, function(){
+    return view('/auth/register');
+}]);

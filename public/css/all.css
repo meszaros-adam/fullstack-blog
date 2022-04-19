@@ -10989,7 +10989,12 @@ p {
 .footer_section {
     background: #204ecf;
     text-align: center;
-    padding: 20px 0px;
+    padding: 20px 0px 0px 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
 }
 
 .footer_section_ul {
@@ -11993,4 +11998,20 @@ textarea {
 .dis_none {
     display: none;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 10px;
+    
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+  
 @media (min-width: 1400px) all and (max-width: 2100px) {}

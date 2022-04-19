@@ -31,17 +31,17 @@ class BlogController extends Controller
     public function categoryIndex(Request $request, $categoryName, $id){
         $blogs = Blog::with('user')->whereHas('categories', function($q) use($id){
             $q->where('category_id',  $id);
-        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(10);
         return view('category')->with(['categoryName' => $categoryName, 'blogs' => $blogs]) ;
     }
     public function tagIndex(Request $request, $tagName, $id){
         $blogs = Blog::with('user')->whereHas('tags', function($q) use($id){
             $q->where('tag_id',  $id);
-        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        })->orderBy('id', 'desc')->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(10);
         return view('tag')->with(['tagName' => $tagName, 'blogs' => $blogs]) ;
     }
     public function allBlogs(){
-        $blogs = Blog::orderBy('id', 'desc')->with(['user'])->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(1);
+        $blogs = Blog::orderBy('id', 'desc')->with(['user'])->select('id','title','post_excerpt', 'slug', 'user_id','featuredImage')->paginate(10);
         return view('blogs')->with(['blogs' => $blogs]);
     }
     public function search(Request $request){
@@ -58,7 +58,7 @@ class BlogController extends Controller
             });
         });
 
-        $blogs = $blogs->paginate(1);
+        $blogs = $blogs->paginate(10);
         $blogs = $blogs->appends($request->all());
         return view('blogs')->with(['blogs' => $blogs]);
     }
