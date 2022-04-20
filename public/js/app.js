@@ -2150,31 +2150,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {
-    return {
-      comments: []
-    };
-  },
+  props: ['comments'],
   created: function created() {
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var res;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return _this.callApi('get', 'https://jsonplaceholder.typicode.com/todos/1');
+              console.log(_this.comments);
 
-            case 2:
-              res = _context.sent;
-
-              if (res.status == 200) {} else {
-                console.log('Something went wrong...');
-              }
-
-            case 4:
+            case 1:
             case "end":
               return _context.stop();
           }

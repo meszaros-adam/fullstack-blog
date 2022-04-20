@@ -35,7 +35,7 @@
 						@if(count($blogs)>0)
 							@foreach($blogs as $blog)
 							<div class="col-12 col-md-6 col-lg-4">
-								<a href="blog/{{$blog->slug}}">
+								<a href="/blog/{{$blog->slug}}">
 									<div class="home_card">
 										<div class="home_card_top">
 											<img src="img/card3.jpg" alt="image">
@@ -51,7 +51,7 @@
 													</li>
 												</ul>
 												@endif
-												<a href="blog/{{$blog->slug}}">
+												<a href="/blog/{{$blog->slug}}">
 													<h2 class="home_card_h2">{{$blog->title}}</h2>
 												</a>
 												<p class="post_p">{{$blog->post_excerpt}}<p>
@@ -73,7 +73,6 @@
 								</a>
 							</div>
 							@endforeach
-						</div>
 						@endif
 					</div>
 					{!! $blogs->links('pagination::bootstrap-4') !!}

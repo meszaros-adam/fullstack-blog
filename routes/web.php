@@ -21,11 +21,16 @@ Route::get('/tag/{tagName}/{id}', [App\Http\Controllers\BlogController::class, '
 Route::get('/search', [App\Http\Controllers\BlogController::class, 'search']);
 
 //Auth
-Route::post('/registration', [App\Http\Controllers\BloguserController::class, 'registration']);
-Route::post('/login', [App\Http\Controllers\BloguserController::class, 'login']);
-Route::get('/login_page', [App\Http\Controllers\BlogController::class, function(){
+Route::post('/registration', [App\Http\Controllers\AuthController::class, 'registration']);
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
+Route::get('/login_page', [App\Http\Controllers\AuthController::class, function(){
     return view('/auth/login');
 }]);
-Route::get('/registration_page', [App\Http\Controllers\BlogController::class, function(){
+Route::get('/registration_page', [App\Http\Controllers\AuthController::class, function(){
     return view('/auth/register');
 }]);
+
+//Social Auth
+Route::get('/auth/{provider}', [App\Http\Controllers\SocialController::class, 'redirect']);
+Route::get('/auth/{provider}/callback', [App\Http\Controllers\SocialController::class, 'callback']);

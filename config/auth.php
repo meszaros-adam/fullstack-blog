@@ -69,6 +69,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        
         'blogusers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Bloguser::class,

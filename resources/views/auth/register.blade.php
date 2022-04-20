@@ -3,9 +3,9 @@
 @section('title', 'Register')
 
 @section('maincontent')
-    <div class="container bg-dark text-light rounded p-5">
+    <div class="container bg-dark text-light rounded my-5 p-5">
         <div class="row justify-content-around">
-                <h1 class="display-3 col-md-3">Register:</h1>
+                <h1 class="display-5 col-md-3">Register:</h1>
                 <form action="/registration" method="post" class="col-md-6">
                     @csrf
                     <div class="form-group">

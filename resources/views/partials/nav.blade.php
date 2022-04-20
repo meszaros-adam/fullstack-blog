@@ -27,12 +27,22 @@
 												</li>
 												@endforeach
 											@endif
+										
+											@auth("bloguser")
+											<li>
+												<!-- <a href="">{{Auth::guard('bloguser')->user()->fullName}}</a> -->
+												<a href="/logout">Logout</a>
+											</li>
+											@else
 											<li>
 												<a href="/login_page">LOGIN</a>
 											</li>
 											<li>
 												<a href="/registration_page">Register</a>
 											</li>
+											@endauth
+											
+										
 										</ul>
 									</div>
 									<search> </search>

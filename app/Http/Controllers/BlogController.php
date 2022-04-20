@@ -15,7 +15,7 @@ class BlogController extends Controller
         return view('home')->with(['blogs' => $blogs, 'categories' => $categories]);
     }
     public function blogSingle(Request $request, $slug){
-        $blog = Blog::where('slug', $slug)->with(['categories', 'tags', 'user'])->first(['id', 'title', 'user_id', 'featuredImage', 'post', 'created_at']);
+        $blog = Blog::where('slug', $slug)->with(['categories', 'tags', 'user', 'comment'])->first(['id', 'title', 'user_id', 'featuredImage', 'post', 'created_at']);
         $category_ids = [];
         foreach($blog->categories as $cat){
             array_push($category_ids, $cat->id);

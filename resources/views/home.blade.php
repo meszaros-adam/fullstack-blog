@@ -20,12 +20,11 @@
 								</div>
 								@endforeach
 							@endif
-							
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+</section>
 		<!-- BANNER -->
 
 		<!-- BODY -->

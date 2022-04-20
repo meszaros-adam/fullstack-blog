@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Bloguser;
 use Illuminate\Support\Facades\Auth;
 
-class BloguserController extends Controller
+class AuthController extends Controller
 {
     public function registration(Request $request){
 
@@ -32,12 +32,15 @@ class BloguserController extends Controller
             'password' => 'bail|required|min:6',
         ]);
 
-        if(Auth::guard('bloguser')->attempt(['email' => $request->email, 'password' => $request->password])){
+        if(Auth::guard('bloguser')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
             $bloguser = Auth::guard('bloguser')->user();
-            return $bloguser;
+            return redirect('/');
         }else{
             return 'Auth failed';
         }
-
+    }
+    public function logout(){
+        Auth::guard('bloguser')->logout();
+        return redirect('/');
     }
 }

@@ -65,18 +65,9 @@
 
 <script>
 export default {
-    data(){
-        return{
-            comments: [],
-        }
-    },
+   props: ['comments'],
     async created(){
-        const res = await this.callApi('get','https://jsonplaceholder.typicode.com/todos/1')
-        if(res.status==200){
-            
-        }else{
-            console.log('Something went wrong...')
-        }
+        console.log(this.comments)
     }
 }
 </script>

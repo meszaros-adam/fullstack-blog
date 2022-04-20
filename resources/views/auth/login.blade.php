@@ -3,9 +3,9 @@
 @section('title', 'Login')
 
 @section('maincontent')
-    <div class="container bg-dark text-light rounded p-5">
+    <div class="container bg-dark text-light my-5 rounded p-5">
         <div class="row justify-content-around">
-                <h1 class="display-3 col-md-3">LOGIN:</h1>
+                <h1 class="display-5 col-md-3">LOGIN:</h1>
                 <form action="/login"  method="post" class="col-md-6">
                 @csrf
                     <div class="form-group">
@@ -23,13 +23,10 @@
             <div>Login with social accounts: </div>
                     <ul class="footer_section_social_ul">
                         <li>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href="/auth/facebook"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fab fa-google"></i></a>
+                            <a href="/auth/google"><i class="fab fa-google"></i></a>
                         </li>
                     </ul>
             </div>

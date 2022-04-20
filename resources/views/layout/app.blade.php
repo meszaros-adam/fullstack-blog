@@ -11,10 +11,12 @@
     @include('partials.header')
 </head>
 <body>
-    <div id="app">
-        @include('partials.nav')
-        @yield('maincontent')
+    <div class="page-container">   
+        <div id="app" class="content-wrap">
+            @include('partials.nav')
+            @yield('maincontent')
+        </div>
+        @include('partials.footer')
     </div>
-    @include('partials.footer')
 </body>
 </html>
