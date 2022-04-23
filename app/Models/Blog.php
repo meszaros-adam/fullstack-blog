@@ -24,6 +24,6 @@ class Blog extends Model
         return $this->belongsTo(User::class, 'user_id')->select('id', 'fullName','profilePic');
     }
     public function comment(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'blog_id');
     }
 }

@@ -20,6 +20,8 @@ Route::get('/category/{categoryName}/{id}', [App\Http\Controllers\BlogController
 Route::get('/tag/{tagName}/{id}', [App\Http\Controllers\BlogController::class, 'tagIndex']);
 Route::get('/search', [App\Http\Controllers\BlogController::class, 'search']);
 
+Route::post('create_comment', [App\Http\Controllers\CommentController::class, 'addComment']);
+
 //Auth
 Route::post('/registration', [App\Http\Controllers\AuthController::class, 'registration']);
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
